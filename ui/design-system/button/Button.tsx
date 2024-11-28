@@ -20,12 +20,12 @@ export const Button = ({
   switch (variant) {
     case "primary": // DEFAULT
       variantStyles = !skornenn
-        ? "border border-2 border-white text-white hover:text-gold hover:border-gold rounded backdrop-blur-sm "
+        ? "border bg-[#fffff] border-2 border-white text-black hover:text-gold hover:border-gold rounded backdrop-blur-sm "
         : "border border-2 border-white text-white hover:text-cyan hover:border-cyan rounded backdrop-blur-sm ";
       break;
     case "secondary":
       variantStyles = !skornenn
-        ? "border border-2 border-gold text-gold hover:text-white hover:bg-gold rounded backdrop-blur-sm "
+        ? "border bg-red border-2 border-gold text-gold hover:text-white hover:bg-gold rounded backdrop-blur-sm "
         : "border border-2 border-cyan text-cyan hover:text-white hover:bg-cyan rounded backdrop-blur-sm ";
       break;
     case "tertiary":
