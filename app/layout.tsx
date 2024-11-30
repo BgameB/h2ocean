@@ -2,15 +2,36 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const dinroundpro = localFont({
+  src: [
+    {
+      path: "./fonts/dinroundpro_black.otf",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "./fonts/dinroundpro_bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/dinroundpro_light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/dinroundpro_medi.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/dinroundpro.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-dinroundpro",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -24,9 +45,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${dinroundpro.variable} bg-background text-white antialiased`}
       >
         {children}
       </body>

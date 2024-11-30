@@ -5,33 +5,35 @@ export default {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./ui/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        white: "#ffffff",
-        gold: {
-          DEFAULT: "#E0AA3E",
+        background: {
+          DEFAULT: "#0A0C14",
         },
-        lightgold: {
-          DEFAULT: "#f5ca5b",
+        primary: {
+          DEFAULT: "#2B2F42",
         },
-        blue: {
-          DEFAULT: "#003D75",
+        secondary: {
+          DEFAULT: "#3A4156",
         },
-        cyan: {
-          DEFAULT: "#33CEF1",
+        tertiary: {
+          DEFAULT: "#0F121E",
         },
-        // TEXT
-        black: {
-          DEFAULT: "#505050",
+        white: {
+          DEFAULT: "#FFFFFF",
         },
-        gray: {
-          DEFAULT: "#AAAAAA",
+        green: {
+          DEFAULT: "#93D333",
         },
-        lightgray: {
-          DEFAULT: "#E3E3E3",
+        red: {
+          DEFAULT: "#D84848",
         },
+      },
+      fontFamily: {
+        dinroundpro: ["var(--font-Dinroundpro)"],
       },
       borderRadius: {
         DEFAULT: "2px",
