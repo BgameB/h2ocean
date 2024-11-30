@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "@/ui/design-system/button/Button";
 
 export default function Home() {
   return (
@@ -12,6 +13,10 @@ export default function Home() {
           height={38}
           priority
         />
+
+        <Button variant="primary">Pogmaster</Button>
+        <Button variant="secondary">Pogmaster2</Button>
+
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
             Get started by editing{" "}
