@@ -24,6 +24,13 @@
   --font-dinroundpro: "DinRoundPro", sans-serif;
 }
 
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 body {
   font-family: var(--font-dinroundpro);
 }

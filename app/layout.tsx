@@ -1,3 +1,4 @@
+import { Navbar } from "@/ui/components/navbar/Navbar";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -49,7 +50,12 @@ export default function RootLayout({
       <body
         className={`${dinroundpro.variable} bg-background text-white antialiased`}
       >
-        {children}
+        <div className="flex max-md:flex-col min-h-screen max-h-screen">
+          <Navbar className="w-[300px]" />
+          <div className="h-full ml-[300px] max-md:ml-0 w-full max-md:w-auto px-[80px] py-[40px] max-md:p-[40px] max-md:py-[20px] max-sm:p-[20px] ">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
