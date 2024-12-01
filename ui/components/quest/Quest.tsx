@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-import defaultIcon from "@/public/next.svg";
+import defaultIcon from "@/public/vercel.svg";
 
 interface Props {
   /* Props Case globale */
@@ -49,12 +49,12 @@ export const Quest = ({
 }: Props) => {
 
   return (
-    <div className={clsx("space-y-2 p-4")}>
+    <div className={clsx("space-y-2 p-4", className)}>
       <div className="flex items-center gap-3">
         {/* Icon */}
         <Image src={icon} alt="iconQuest" width={32} height={32} />
         {/* Texte */}
-        <div className="text-white font-medium">Quête n°{id} :</div>
+        <div className="text-white font-bold">Quête n°{id} :</div>
         <div className="text-white font-normal">{text}</div>
       </div>
       {/* Barre de progression */}
