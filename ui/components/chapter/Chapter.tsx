@@ -87,9 +87,11 @@ export const Chapter = ({
           </div>
         </div>
         <div className="flex justify-center items-center h-full">
-          <button className="rounded-[8px] bg-[#1CB0F6] font-dinroundpro font-bold tracking-[1.5px] p-[10px] hover:opacity-90 cursor-pointer w-full">
-            POURSUIVRE
-          </button>
+          <a href="/lesson" className="w-full">
+            <button className="rounded-[8px] bg-[#1CB0F6] font-dinroundpro font-bold tracking-[1.5px] p-[10px] hover:opacity-90 cursor-pointer w-full">
+              POURSUIVRE
+            </button>
+          </a>
         </div>
       </div>
       <div className="bg-primary p-[10px] text-[18px] rounded-[10px] w-full col-span-2 border-b-[3px] border-[#37464F]">

@@ -1,0 +1,31 @@
+{
+  "parcours": [
+    {
+      "id": 1,
+      "name": "Introduction",
+      "description": "Apprenez les bases de notre formation.",
+      "quizList": [
+        {
+          "id": 1,
+          "image": "/vercel.svg",
+          "question": "Quelle est cette forme géométrique ?",
+          "answer1": "Carré",
+          "answer2": "Rectangle",
+          "answer3": "Triangle",
+          "correctAnswer": "Triangle"
+        }
+      ],
+      "quizCorrectList": [
+        {
+          "id": 1,
+          "question": "Quelles sont les deux plus grandes planètes du système solaire ?",
+          "answer1": "Mars",
+          "answer2": "Jupiter",
+          "answer3": "Saturne",
+          "answer4": "Vénus",
+          "correctAnswers": ["Jupiter", "Saturne"]
+        }
+      ]
+    }
+  ]
+}

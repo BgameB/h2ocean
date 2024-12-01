@@ -1,32 +1,21 @@
-import QIncorrect from "@/ui/components/quiz/QIncorrect";
-import Quiz from "@/ui/components/quiz/Quiz";
+"use server";
 
-import VercelIcon from "@/public/vercel.svg";
+import { IParcours } from "@/lib/type";
+import PageLesson from "@/ui/page/PageLesson";
+import fs from "fs";
+import path from "path";
 
-export default function TeamPage() {
-  // SYSTEME DE LECON EN FONCTION DE LA PROGRESSION
-  return (
-    <div className="">
-      <Quiz
-        id={1}
-        image={VercelIcon}
-        answer1="Carré"
-        answer2="Rectangle"
-        answer3="Triangle"
-        correctAnswer="Triangle"
-        color="#0F121E"
-      />
+async function getParcours(id: number) {
+  const filePath = path.join(process.cwd(), "data", "data.json");
+  const jsonData = fs.readFileSync(filePath, "utf-8");
+  const { parcours } = JSON.parse(jsonData);
+  return parcours.find((parcours: IParcours) => parcours.id === id);
+}
 
-      <QIncorrect
-        question="Quelles sont les deux plus grandes planètes du système solaire ?"
-        answer1="Mars"
-        answer2="Jupiter"
-        answer3="Saturne"
-        answer4="Vénus"
-        correctAnswer1="Jupiter"
-        correctAnswer2="Saturne"
-        color="#0F121E"
-      />
-    </div>
-  );
+export default async function LessonPage() {
+  const parcours = await getParcours(1);
+  if (!parcours) return <p>Parcours introuvable</p>;
+
+  // Transfert des données au composant client
+  return <PageLesson data={parcours} />;
 }
