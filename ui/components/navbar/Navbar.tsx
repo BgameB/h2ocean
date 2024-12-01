@@ -22,12 +22,12 @@ export const Navbar = ({ className = "" }: Props) => {
     },
     {
       href: "/quest",
-      text: "Quetes",
+      text: "QUETES",
       icon: <ChestIcon />,
     },
     {
       href: "/team",
-      text: "Equipe",
+      text: "EQUIPE",
       icon: <GlobalIcon img={teamIcon} alt="Pictogramme d'équipe" />,
     },
   ];
@@ -35,7 +35,7 @@ export const Navbar = ({ className = "" }: Props) => {
   return (
     <nav
       className={cn(
-        "fixed flex-col h-screen px-[40px] pt-[20px] border-r-2 border-[#37464F] max-md:flex-row max-md:max-h-[100px] max-md:w-full max-md:border-r-0 max-md:border-t-2 max-md:bottom-0 z-[999]",
+        "fixed flex-col h-screen px-[40px] pt-[20px] border-r-2 border-[#37464F] max-md:flex-row max-md:max-h-[100px] max-md:w-full max-md:border-r-0 max-md:border-t-2 max-md:bottom-0 z-[999] bg-background",
         className
       )}
     >
@@ -50,7 +50,7 @@ export const Navbar = ({ className = "" }: Props) => {
               key={i}
               href={item.href}
               className={cn(
-                "flex gap-[20px] w-full rounded-[10px] p-[10px] hover:bg-primary duration-200 cursor-pointer max-md:justify-center items-center max-md:w-fit",
+                "flex gap-[20px] w-full rounded-[10px] p-[10px] hover:bg-primary duration-200 cursor-pointer max-md:justify-center items-center max-md:w-fit tracking-[1.2px]",
                 path === item.href &&
                   "outline outline-[3px] outline-[#3F85A7] bg-tertiary"
               )}

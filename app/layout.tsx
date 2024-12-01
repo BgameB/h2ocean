@@ -1,3 +1,4 @@
+import { UserProvider } from "@/context/UserContext";
 import { Navbar } from "@/ui/components/navbar/Navbar";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -50,12 +51,14 @@ export default function RootLayout({
       <body
         className={`${dinroundpro.variable} bg-background text-white antialiased`}
       >
-        <div className="flex max-md:flex-col min-h-screen max-h-screen">
-          <Navbar className="w-[300px]" />
-          <div className="h-full ml-[300px] max-md:ml-0 w-full max-md:w-auto px-[80px] py-[40px] max-md:p-[40px] max-md:py-[20px] max-sm:p-[20px] ">
-            {children}
+        <UserProvider>
+          <div className="flex max-md:flex-col min-h-screen max-h-screen">
+            <Navbar className="w-[300px]" />
+            <div className="h-full ml-[300px] max-md:ml-0 w-full max-md:w-auto px-[40px] py-[40px] max-md:p-[20px] max-md:py-[20px] max-sm:p-[20px]">
+              {children}
+            </div>
           </div>
-        </div>
+        </UserProvider>
       </body>
     </html>
   );

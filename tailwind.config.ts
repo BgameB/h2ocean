@@ -39,6 +39,9 @@ export default {
         red: {
           DEFAULT: "#D84848",
         },
+        gold: {
+          DEFAULT: "#FFC700"
+        }
       },
       fontFamily: {
         dinroundpro: ["var(--font-Dinroundpro)"],
