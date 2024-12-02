@@ -13,6 +13,15 @@
           "answer2": "Rectangle",
           "answer3": "Triangle",
           "correctAnswer": "Triangle"
+        },
+        {
+          "id": 2,
+          "image": "/vercel.svg",
+          "question": "Pourquoi le 2+2 ?",
+          "answer1": "4",
+          "answer2": "8",
+          "answer3": "2",
+          "correctAnswer": "1"
         }
       ],
       "quizCorrectList": [
