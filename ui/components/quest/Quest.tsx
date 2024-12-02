@@ -49,7 +49,7 @@ export const Quest = ({
 }: Props) => {
 
   return (
-    <div className={clsx("space-y-2 p-4", className)}>
+    <div className={clsx("grid grid-cols-2 p-[25px] max-w-[1000px] gap-[20px] max-sm:flex max-sm:flex-col", className)}>
       <div className="flex items-center gap-3">
         {/* Icon */}
         <Image src={icon} alt="iconQuest" width={32} height={32} />
