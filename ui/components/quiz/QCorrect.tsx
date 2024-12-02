@@ -16,7 +16,7 @@ interface Props {
   color?: string
 }
 
-export const Quiz = ({
+export const QCorrect = ({
   question,
   answer1,
   answer2,
@@ -93,5 +93,5 @@ export const Quiz = ({
   )
 }
 
-export default Quiz
+export default QCorrect
 

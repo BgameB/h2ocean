@@ -1,4 +1,4 @@
-import QIncorrect from "@/ui/components/quiz/QIncorrect";
+import QCorrect from "@/ui/components/quiz/QCorrect";
 import Quiz from "@/ui/components/quiz/Quiz";
 
 import VercelIcon from "@/public/vercel.svg";
@@ -17,7 +17,7 @@ export default function TeamPage() {
         color="#0F121E"
       />
 
-      <QIncorrect
+      <QCorrect
         question="Quelles sont les deux plus grandes planètes du système solaire ?"
         answer1="Mars"
         answer2="Jupiter"

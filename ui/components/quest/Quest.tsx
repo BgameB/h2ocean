@@ -28,7 +28,7 @@ const ProgressBar = ({
   const percentage = (Math.min(Math.max(current, 0), max) / max) * 100;
 
   return (
-    <div className="relative h-4 w-full overflow-hidden rounded-full bg-secondary">
+    <div className="relative h-4 w-full overflow-hidden rounded-full bg-gray-200">
       <div
         className="absolute left-0 top-0 h-full transition-all rounded-full"
         style={{ width: `${percentage}%`, backgroundColor: color }}
