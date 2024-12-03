@@ -4,6 +4,8 @@ import { useUser } from "@/context/UserContext";
 import landscape from "@/img/picture/landscape.jpg";
 import { Chapter } from "@/ui/components/chapter/Chapter";
 
+import PlayerProfile from "@/ui/components/playerProfile/PlayerProfile";
+
 export default function LearnPage() {
   const { user } = useUser();
 
@@ -31,14 +33,14 @@ export default function LearnPage() {
           max={10}
         />
       </div>
-      <div className="max-lg:hidden flex flex-col min-w-[300px]">
+      <div className="max-lg:hidden flex flex-col min-w-[450px]">
         <div className="border-[#37464F] border-[3px] p-[10px] rounded-[20px] flex flex-col">
-          <p className="font-bold text-[35px] mb-[20px]">Mon Profil</p>
           <div className="text-[16px] flex flex-col gap-[5px]">
-            <p>Pseudo : {user.username}</p>
-            <p>Pseudo : {""}</p>
-            <p>Pseudo : {""}</p>
-            <p>Pseudo : {""}</p>
+            <PlayerProfile
+              level={9}
+              maxLevel={15}
+              xp={1500}
+            />
           </div>
         </div>
       </div>
