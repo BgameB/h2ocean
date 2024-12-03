@@ -6,19 +6,26 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 interface UserData {
   username: string;
   gems: number;
+  xp: number;
+  progress: { [parcoursId: number]: number };
 }
 
 interface UserContextType {
   user: UserData;
   setUser: (user: UserData) => void;
   addGems: (amount: number) => void;
+  addXp: (amount: number) => void;
   changeUsername: (newUsername: string) => void;
   resetUser: () => void;
+  updateProgress: (parcoursId: number, step: number) => void;
+  getProgress: (parcoursId: number) => number;
 }
 
 const DEFAULT_USER: UserData = {
   username: "Invité",
   gems: 0,
+  xp: 0,
+  progress: {},
 };
 
 const LOCAL_STORAGE_KEY = "userData";
@@ -50,6 +57,10 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({
     setUser((prev) => ({ ...prev, gems: prev.gems + amount }));
   };
 
+  const addXp = (amount: number) => {
+    setUser((prev) => ({ ...prev, xp: prev.xp + amount }));
+  };
+
   const changeUsername = (newUsername: string) => {
     setUser((prev) => ({ ...prev, username: newUsername }));
   };
@@ -59,9 +70,29 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({
     saveToLocalStorage(LOCAL_STORAGE_KEY, DEFAULT_USER);
   };
 
+  const updateProgress = (parcoursId: number, step: number) => {
+    setUser((prev) => ({
+      ...prev,
+      progress: { ...prev.progress, [parcoursId]: step },
+    }));
+  };
+
+  const getProgress = (parcoursId: number): number => {
+    return user.progress[parcoursId] || 0;
+  };
+
   return (
     <UserContext.Provider
-      value={{ user, setUser, addGems, changeUsername, resetUser }}
+      value={{
+        user,
+        setUser,
+        addGems,
+        changeUsername,
+        resetUser,
+        updateProgress,
+        getProgress,
+        addXp,
+      }}
     >
       {children}
     </UserContext.Provider>

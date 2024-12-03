@@ -28,7 +28,7 @@ export const Chapter = ({
   return current === max ? (
     <section
       className={cn(
-        "rounded-[15px] grid grid-cols-2 p-[25px] border-gold border-[3px] max-w-[800px] gap-[20px] max-sm:flex max-sm:flex-col",
+        "rounded-[15px] grid grid-cols-2 p-[25px] bg-tertiary shadow-md border-gold border-[3px] max-w-[800px] gap-[20px] max-sm:flex max-sm:flex-col",
         className
       )}
     >

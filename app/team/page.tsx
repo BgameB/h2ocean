@@ -1,4 +1,5 @@
 export default function TeamPage() {
+
   return (
     <section className="mb-[100px]">
       <div className="max-w-screen-xl">
@@ -12,10 +13,11 @@ export default function TeamPage() {
           </p>
         </div>
         <div className="grid gap-8 mb-6 lg:mb-16">
-          <div className="items-center rounded-lg shadow sm:flex bg-gray-800 border-gray-700">
+          {/* ------------------------ */}
+          <div className="overflow-hidden items-center rounded-[15px]  sm:flex bg-tertiary border-[#37464F] border-[3px] shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]">
             <a href="#">
               <img
-                className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+                className="w-full rounded-[15px]  sm:rounded-none sm:rounded-l-lg"
                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
                 alt="Bonnie Avatar"
               />
@@ -93,10 +95,13 @@ export default function TeamPage() {
               </ul>
             </div>
           </div>
-          <div className="items-center rounded-lg shadow sm:flex bg-gray-800 border-gray-700">
+
+          {/* ------------------------ */}
+
+          <div className="items-center rounded-[15px]  sm:flex bg-tertiary border-[#37464F] border-[3px] shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]">
             <a href="#">
               <img
-                className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+                className="w-full rounded-[15px]  sm:rounded-none sm:rounded-l-lg"
                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                 alt="Jese Avatar"
               />
@@ -174,10 +179,13 @@ export default function TeamPage() {
               </ul>
             </div>
           </div>
-          <div className="items-center rounded-lg shadow sm:flex bg-gray-800 border-gray-700">
+
+          {/* ------------------------ */}
+
+          <div className="items-center rounded-[15px]  sm:flex bg-tertiary border-[#37464F] border-[3px] shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]">
             <a href="#">
               <img
-                className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+                className="w-full rounded-[15px]  sm:rounded-none sm:rounded-l-lg"
                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
                 alt="Michael Avatar"
               />
@@ -255,10 +263,13 @@ export default function TeamPage() {
               </ul>
             </div>
           </div>
-          <div className="items-center rounded-lg shadow sm:flex bg-gray-800 border-gray-700">
+
+          {/* ------------------------ */}
+
+          <div className="items-center rounded-[15px]  sm:flex bg-tertiary border-[#37464F] border-[3px] shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]">
             <a href="#">
               <img
-                className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+                className="w-full rounded-[15px]  sm:rounded-none sm:rounded-l-lg"
                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-mcguire.png"
                 alt="Sofia Avatar"
               />

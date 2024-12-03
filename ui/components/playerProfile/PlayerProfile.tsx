@@ -34,8 +34,8 @@ const ProgressBar = ({
     return (
       <div className="relative h-4 w-full overflow-hidden rounded-full bg-gray-200">
         <div
-          className="absolute left-0 top-0 h-full transition-all rounded-full"
-          style={{ width: `${percentage}%`, backgroundColor: "#30df95" }}
+          className="absolute left-0 top-0 h-full transition-all"
+          style={{ width: `${percentage}%`, backgroundColor: "#93D333" }}
         />
       </div>
     );

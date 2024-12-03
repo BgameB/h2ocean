@@ -100,7 +100,7 @@ export const QCorrect = ({
             ? "Vous avez répondu"
             : `Répondre (${selectedItems.length}/2 selectionné)`}
         </Button>
-        {isSubmitted && (
+        {/* {isSubmitted && (
           <div
             className={`text-center font-semibold ${
               isCorrect ? "text-green-600" : "text-red-600"
@@ -108,7 +108,7 @@ export const QCorrect = ({
           >
             {isCorrect ? "Correct !" : "Incorrect. Réessayez !"}
           </div>
-        )}
+        )} */}
       </CardContent>
     </Card>
   );

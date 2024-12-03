@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/ui/design-system/quizDesign/QuizCard";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
   id: number;
@@ -22,7 +22,7 @@ interface Props {
 }
 
 export const Quiz = ({
-  // id,
+  id,
   className,
   image,
   answer1,
@@ -32,6 +32,11 @@ export const Quiz = ({
   color = "#ffffff",
   onAnswer,
 }: Props) => {
+  useEffect(() => {
+    setSelectedAnswer(null);
+    setIsCorrect(null);
+  }, [id]);
+
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
@@ -80,7 +85,7 @@ export const Quiz = ({
             </Button>
           ))}
         </div>
-        {selectedAnswer && (
+        {/* {selectedAnswer && (
           <div
             className={`text-center font-semibold ${
               isCorrect ? "text-green-600" : "text-red-600"
@@ -88,7 +93,7 @@ export const Quiz = ({
           >
             {isCorrect ? "Correct !" : "Incorrect. Réessayez !"}
           </div>
-        )}
+        )} */}
       </CardContent>
     </Card>
   );

@@ -32,13 +32,13 @@ export default function PageLesson({ data }: { data: IParcours }) {
   };
   return (
     <div className="p-4">
-      <div className="w-full bg-gray-200 rounded-full h-4 my-4">
+      <div className="w-full bg-gray-200 h-4 my-4 rounded-full overflow-hidden">
         <div
-          className="bg-blue-500 h-4 rounded-full transition-all"
+          className="bg-blue-500 h-4 transition-all"
           style={{ width: `${(currentStep / maxStep) * 100}%` }}
         ></div>
       </div>
-      <p>
+      <p className="font-semibold">
         Progression : {currentStep} / {maxStep}
       </p>
 

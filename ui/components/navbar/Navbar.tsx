@@ -35,7 +35,7 @@ export const Navbar = ({ className = "" }: Props) => {
   return (
     <nav
       className={cn(
-        "fixed flex-col h-screen px-[40px] pt-[20px] border-r-2 border-[#37464F] max-md:flex-row max-md:max-h-[100px] max-md:w-full max-md:border-r-0 max-md:border-t-2 max-md:bottom-0 z-[999] bg-background",
+        "fixed flex-col h-screen px-[40px] pt-[20px] border-r-2 border-[#37464F] max-md:flex-row max-md:max-h-[100px] max-md:w-full max-md:border-r-0 max-md:border-t-2 max-md:bottom-0 z-[999] bg-tertiary",
         className
       )}
     >
