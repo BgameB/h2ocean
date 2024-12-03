@@ -9,23 +9,15 @@ import Quiz from "../components/quiz/Quiz";
 export default function PageLesson({ data }: { data: IParcours }) {
   const parcours = data;
 
-  const [maxStep] = useState(
-    data.quizCorrectList.length + data.quizList.length
-  );
+  const [maxStep] = useState(data.allQuizzes?.length || 0);
+
   const [currentStep, setCurrentStep] = useState(1);
 
   const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
   const [isQuizCorrect, setIsQuizCorrect] = useState(false);
 
-  const allQuizzes = [
-    ...parcours.quizList.map((quiz) => ({ ...quiz, type: "quiz" })),
-    ...parcours.quizCorrectList.map((quiz) => ({
-      ...quiz,
-      type: "quizCorrect",
-    })),
-  ];
 
-  const currentQuiz = allQuizzes[currentQuizIndex];
+  const currentQuiz = parcours.allQuizzes[currentQuizIndex];
 
   const handleAnswer = (isCorrect: boolean) => {
     if (isCorrect) {

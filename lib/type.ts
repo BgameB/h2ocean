@@ -24,4 +24,5 @@ export interface IParcours {
   description: string;
   quizList: IQuiz[];
   quizCorrectList: IQuizCorrect[];
+  allQuizzes?: [];
 }
