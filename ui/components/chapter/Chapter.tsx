@@ -1,10 +1,12 @@
 "use client";
 
 import { calculatePercentage } from "@/lib/constant";
+import { IParcours } from "@/lib/type";
 import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 
 interface Props {
+  parcour: IParcours;
   title: string;
   description: string;
   current: number;
@@ -16,6 +18,7 @@ interface Props {
 }
 
 export const Chapter = ({
+  parcour,
   title,
   description,
   current,
@@ -53,9 +56,11 @@ export const Chapter = ({
           </div>
         </div>
         <div className="flex justify-center items-center h-full">
-          <button className="rounded-[8px] bg-[#1CB0F6] font-dinroundpro font-bold tracking-[1.5px] p-[10px] hover:opacity-90 cursor-pointer w-full">
-            POURSUIVRE
-          </button>
+          <a href={`/lesson/${parcour.id}`} className="w-full">
+            <button className="rounded-[8px] bg-[#1CB0F6] font-dinroundpro font-bold tracking-[1.5px] p-[10px] hover:opacity-90 cursor-pointer w-full">
+              POURSUIVRE
+            </button>
+          </a>
         </div>
       </div>
     </section>
@@ -87,7 +92,7 @@ export const Chapter = ({
           </div>
         </div>
         <div className="flex justify-center items-center h-full">
-          <a href="/lesson" className="w-full">
+          <a href={`/lesson/${parcour.id}`} className="w-full">
             <button className="rounded-[8px] bg-[#1CB0F6] font-dinroundpro font-bold tracking-[1.5px] p-[10px] hover:opacity-90 cursor-pointer w-full">
               POURSUIVRE
             </button>

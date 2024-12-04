@@ -3,6 +3,7 @@
 import { IParcours, IQuiz, IQuizCorrect } from "@/lib/type";
 import PageLesson from "@/ui/page/PageLesson";
 import fs from "fs";
+import { redirect } from "next/navigation";
 import path from "path";
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -31,9 +32,26 @@ async function getParcours(id: number): Promise<IParcours | undefined> {
   return { ...parcoursData, allQuizzes };
 }
 
-export default async function LessonPage() {
-  const parcours = await getParcours(1);
-  if (!parcours) return <p>Parcours introuvable</p>;
+export default async function LessonPage({
+  params,
+}: {
+  params: {
+    id: string;
+  };
+}) {
+  const { id } = await params;
+
+  const idNumber = parseInt(id, 10);
+
+  if (isNaN(idNumber)) {
+    return redirect("/learn");
+  }
+
+  const parcours = await getParcours(idNumber);
+
+  if (!parcours) {
+    return redirect("/learn");
+  }
 
   return <PageLesson data={parcours} />;
 }

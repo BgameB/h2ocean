@@ -6,3 +6,5 @@ export function calculatePercentage(current: number, max: number): number {
   }
   return (current / max) * 100;
 }
+
+export const LEVELS_XP = [100, 500, 1000, 2000, 3500, 5500, 8000, 11000];

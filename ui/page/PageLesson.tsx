@@ -4,7 +4,9 @@ import { useUser } from "@/context/UserContext";
 import { IParcours } from "@/lib/type";
 import VercelIcon from "@/public/vercel.svg";
 import QCorrect from "@/ui/components/quiz/QCorrect";
-import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Check, Heart, OctagonXIcon, Star } from "lucide-react";
+import { useMemo, useState } from "react";
 import { VictoryPopup } from "../components/pop-up/Victory-popup";
 import Quiz from "../components/quiz/Quiz";
 
@@ -17,104 +19,186 @@ export default function PageLesson({ data }: { data: IParcours }) {
   const [currentStep, setCurrentStep] = useState(0);
   const [goodAnswer, setGoodAnswer] = useState(0);
   const [BadAnswer, setBadAnswer] = useState(0);
+  const [streak, setStreak] = useState(0);
 
   const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
   const [isQuizCorrect, setIsQuizCorrect] = useState(false);
+  const [isQuizInCorrect, setIsQuizInCorrect] = useState(false);
 
   const currentQuiz = parcours.allQuizzes[currentQuizIndex];
+  const progressPercentage = (currentStep / maxStep) * 100;
+  const remainingLives = 3 - BadAnswer;
+
+  const initialProgress = useMemo(
+    () => getProgress(parcours.id),
+    [parcours.id, getProgress]
+  );
 
   const handleAnswer = (isCorrect: boolean) => {
     if (isCorrect) {
       setIsQuizCorrect(true);
       setGoodAnswer(goodAnswer + 1);
+      setStreak(streak + 1);
     } else {
+      setIsQuizInCorrect(true);
       setBadAnswer(BadAnswer + 1);
+      setStreak(0);
     }
     setTimeout(() => {
       setIsQuizCorrect(false);
+      setIsQuizInCorrect(false);
       setCurrentStep((prev) => Math.min(prev + 1, maxStep));
       setCurrentQuizIndex((prev) => prev + 1);
+
+      if (currentStep + 1 === maxStep) {
+        if (initialProgress < goodAnswer) {
+          updateProgress(parcours.id, goodAnswer);
+        }
+        addXp(100);
+      }
     }, 1000);
   };
 
-  useEffect(() => {
-    if (currentStep === maxStep) {
-      if (getProgress(parcours.id) < goodAnswer) {
-        updateProgress(parcours.id, goodAnswer);
-      }
-
-      addXp(100);
-    }
-  }, [
-    currentStep,
-    addXp,
-    maxStep,
-    parcours.id,
-    updateProgress,
-    getProgress,
-    goodAnswer,
-  ]);
   return (
-    <div className="p-4 max-md:mb-[100px]">
+    <div className="p-4 max-md:mb-[100px] overflow-hidden">
       {maxStep !== currentStep && (
         <>
-          <div className="w-full bg-gray-200 h-4 my-4 rounded-full overflow-hidden">
+          <div className="w-full bg-gray-200 h-8 my-4 rounded-full overflow-hidden relative">
             <div
-              className="bg-blue-500 h-4 transition-all"
-              style={{ width: `${(currentStep / maxStep) * 100}%` }}
+              className="bg-gradient-to-r from-blue-400 to-blue-600 h-full transition-all duration-500 ease-out"
+              style={{ width: `${progressPercentage}%` }}
             ></div>
+            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-black font-bold">
+              {currentStep} / {maxStep}
+            </div>
           </div>
-          <p className="font-semibold">
-            Progression : {currentStep} / {maxStep}
-          </p>
-          <p className="font-semibold">
-            Bonne réponce : {goodAnswer} / {maxStep}
-          </p>
-          <p className="font-semibold">
-            Mauvaise réponce : {BadAnswer} / {maxStep}
-          </p>
+          <div className="flex justify-between items-center mb-4">
+            <div className="flex items-center space-x-2">
+              {[...Array(3)].map((_, index) => (
+                <Heart
+                  key={index}
+                  className={`w-6 h-6 ${
+                    index < remainingLives
+                      ? "text-red-500 fill-current"
+                      : "text-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+            <div className="flex items-center space-x-2">
+              <Star className="w-6 h-6 text-yellow-400 fill-current" />
+              <span className="font-bold">{goodAnswer}</span>
+            </div>
+          </div>
+          <div className="text-center mb-4">
+            <p className="text-lg font-semibold">
+              Série de bonnes réponses : {streak} {streak > 0 && "🔥"}
+            </p>
+          </div>
         </>
       )}
 
-      <div className="mt-6">
-        {currentQuiz && currentQuiz.type === "quiz" ? (
-          <Quiz
-            id={currentQuiz.id}
-            image={VercelIcon}
-            answer1={currentQuiz.answer1}
-            answer2={currentQuiz.answer2}
-            answer3={currentQuiz.answer3!}
-            correctAnswer={currentQuiz.correctAnswer}
-            color="#0F121E"
-            onAnswer={handleAnswer}
-          />
-        ) : currentQuiz ? (
-          <QCorrect
-            question={currentQuiz.question}
-            answer1={currentQuiz.answer1}
-            answer2={currentQuiz.answer2}
-            answer3={currentQuiz.answer3!}
-            answer4={currentQuiz.answer4}
-            correctAnswer1={currentQuiz.correctAnswers[0]}
-            correctAnswer2={currentQuiz.correctAnswers[1]}
-            color="#0F121E"
-            onAnswer={handleAnswer}
-          />
-        ) : (
-          <>
-            <VictoryPopup
-              isOpen={!currentQuiz}
-              totalQuestions={maxStep}
-              correctAnswers={goodAnswer}
-              wrongAnswers={BadAnswer}
-              xpGained={goodAnswer * 100} // 100 XP per correct answer
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentQuizIndex}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.5 }}
+          className="mt-6"
+        >
+          {currentQuiz && currentQuiz.type === "quiz" ? (
+            <Quiz
+              id={currentQuiz.id}
+              image={VercelIcon}
+              answer1={currentQuiz.answer1}
+              answer2={currentQuiz.answer2}
+              answer3={currentQuiz.answer3!}
+              correctAnswer={currentQuiz.correctAnswer}
+              color="#0F121E"
+              onAnswer={handleAnswer}
             />
-          </>
-        )}
-      </div>
+          ) : currentQuiz ? (
+            <QCorrect
+              question={currentQuiz.question}
+              answer1={currentQuiz.answer1}
+              answer2={currentQuiz.answer2}
+              answer3={currentQuiz.answer3!}
+              answer4={currentQuiz.answer4}
+              correctAnswer1={currentQuiz.correctAnswers[0]}
+              correctAnswer2={currentQuiz.correctAnswers[1]}
+              color="#0F121E"
+              onAnswer={handleAnswer}
+            />
+          ) : (
+            <>
+              <VictoryPopup
+                isOpen={!currentQuiz}
+                totalQuestions={maxStep}
+                correctAnswers={goodAnswer}
+                wrongAnswers={BadAnswer}
+                xpGained={goodAnswer * 100} // 100 XP per correct answer
+              />
+            </>
+          )}
+        </motion.div>
+      </AnimatePresence>
 
       {/* Indicateur de bonne réponse */}
-      {isQuizCorrect && <p className="text-green-500 mt-4">Bonne réponse !</p>}
+      <AnimatePresence>
+        {isQuizCorrect && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+            className="inset-[0px]  max-md:left-[0px] left-[300px] flex items-center justify-center bg-opacity-50 z-50 fixed"
+          >
+            <div className="p-8 text-center bg-tertiary/80 rounded-[15px] border-[#37464F] border-[3px]">
+              <motion.div
+                initial={{ y: -20 }}
+                animate={{ y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              >
+                <Check className="w-16 h-16 text-green 0 mx-auto mb-4" />
+              </motion.div>
+              <p className="text-2xl font-bold text-green-500">
+                Bonne réponse ! 🎉
+              </p>
+            </div>
+          </motion.div>
+        )}
+        {isQuizInCorrect && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+            className="inset-[0px]  max-md:left-[0px] left-[300px] flex items-center justify-center bg-opacity-50 z-50 fixed"
+          >
+            <div className="p-8 text-center bg-tertiary/80 rounded-[15px] border-[#37464F] border-[3px]">
+              <motion.div
+                initial={{ y: -20 }}
+                animate={{ y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              >
+                <OctagonXIcon className="w-16 h-16 text-red mx-auto mb-4" />
+              </motion.div>
+              <p className="text-2xl font-bold text-red">
+                Mauvaise réponse ! 😔
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
