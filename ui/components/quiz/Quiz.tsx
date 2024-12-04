@@ -45,6 +45,8 @@ export const Quiz = ({
     setIsCorrect(answer === correctAnswer);
     if (answer === correctAnswer) {
       onAnswer(true);
+    } else {
+      onAnswer(false);
     }
   };
 

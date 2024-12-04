@@ -20,7 +20,6 @@ async function getParcours(id: number): Promise<IParcours | undefined> {
   const parcoursData = parcours.find((p: IParcours) => p.id === id);
   if (!parcoursData) return undefined;
 
-  // Fusionner et mélanger les quiz
   const allQuizzes = shuffleArray([
     ...parcoursData.quizList.map((quiz: IQuiz) => ({ ...quiz, type: "quiz" })),
     ...parcoursData.quizCorrectList.map((quiz: IQuizCorrect) => ({
@@ -29,11 +28,11 @@ async function getParcours(id: number): Promise<IParcours | undefined> {
     })),
   ]);
 
-  return { ...parcoursData, allQuizzes }; 
+  return { ...parcoursData, allQuizzes };
 }
 
 export default async function LessonPage() {
-  const parcours = await getParcours(1); 
+  const parcours = await getParcours(1);
   if (!parcours) return <p>Parcours introuvable</p>;
 
   return <PageLesson data={parcours} />;

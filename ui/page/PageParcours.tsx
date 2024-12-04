@@ -12,7 +12,7 @@ export default function PageParcours({ data }: IParcours[]) {
 
   return (
     <div className="flex gap-[40px] max-md:mb-[100px]">
-      <div className="flex gap-[40px] flex-col">
+      <div className="flex gap-[40px] flex-col w-full">
         {data.map((parcour: IParcours) => {
           return (
             <Chapter

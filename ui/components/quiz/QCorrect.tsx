@@ -66,6 +66,8 @@ export const QCorrect = ({
       correctAnswers.every((item) => selectedItems.includes(item))
     ) {
       onAnswer(true);
+    } else {
+      onAnswer(false);
     }
   };
 
