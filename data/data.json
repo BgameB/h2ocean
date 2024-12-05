@@ -7,30 +7,12 @@
       "quizList": [
         {
           "id": 1,
-          "image": "img/picture/ia_intro.jpg",
+          "image": "/img/ressources/courants_chaleur.jpg",
           "question": "Quel est le rôle principal des courants marins dans l’océan ?",
           "answer1": "Transporter les déchets plastiques.",
           "answer2": "Réchauffer les océans polaires uniquement.",
           "answer3": "Distribuer la chaleur et les nutriments à travers la planète.",
           "correctAnswer": "Distribuer la chaleur et les nutriments à travers la planète."
-        },
-        {
-          "id": 2,
-          "image": "/vercel.svg",
-          "question": "Pourquoi le 2+2 ?",
-          "answer1": "4",
-          "answer2": "8",
-          "answer3": "2",
-          "correctAnswer": "4"
-        },
-        {
-          "id": 3,
-          "image": "/vercel.svg",
-          "question": "----- ?",
-          "answer1": "Bon",
-          "answer2": "Pas bon",
-          "answer3": "Moin bon",
-          "correctAnswer": "Bon"
         }
       ],
       "quizCorrectList": [

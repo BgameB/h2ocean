@@ -10,6 +10,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface Props {
+  question: string;
   id: number;
   className?: string;
   image: string;
@@ -24,6 +25,7 @@ interface Props {
 export const Quiz = ({
   id,
   className,
+  question,
   image,
   answer1,
   answer2,
@@ -55,16 +57,16 @@ export const Quiz = ({
       className={`w-full max-w-md mx-auto ${className}`}
       style={{ backgroundColor: color }}
     >
-      <CardTitle>Trouvez la Bonne réponse</CardTitle>
+      <CardTitle className="text-center">{question}</CardTitle>
 
       <CardContent className="space-y-5 p-5">
         <div className="flex justify-center">
-          <Image
+          <img
             src={image}
             alt="Quiz Image"
             width={256}
             height={256}
-            className="rounded-lg shadow-md"
+            className="rounded-lg shadow-md w-full h-full"
           />
         </div>
 

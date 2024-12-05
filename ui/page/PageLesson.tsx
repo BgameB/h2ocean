@@ -132,6 +132,7 @@ export default function PageLesson({ data }: { data: IParcours }) {
             <Quiz
               id={currentQuiz.id}
               image={currentQuiz.image}
+              question={currentQuiz.question}
               answer1={currentQuiz.answer1}
               answer2={currentQuiz.answer2}
               answer3={currentQuiz.answer3!}
