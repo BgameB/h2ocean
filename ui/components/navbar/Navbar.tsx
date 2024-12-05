@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import teamIcon from "@/img/icon/teamIcon.svg";
+import FaqIcon from "@/img/icon/faqIcon.png";
 
 interface Props {
   className: string;
@@ -33,7 +34,7 @@ export const Navbar = ({ className = "" }: Props) => {
     {
       href: "/faq",
       text: "EQUIPE",
-      icon: <GlobalIcon img={teamIcon} alt="Pictogramme d'équipe" />,
+      icon: <GlobalIcon img={FaqIcon} alt="Pictogramme d'équipe" />,
     },
   ];
 
@@ -45,7 +46,7 @@ export const Navbar = ({ className = "" }: Props) => {
       )}
     >
       <h1 className="font-black text-[40px] mb-[50px] max-md:hidden text-center">
-        DuoDingo
+        H2OCEAN
       </h1>
 
       <section className="flex flex-col gap-[20px] max-md:flex-row max-md:justify-evenly">

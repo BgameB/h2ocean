@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import { Skull, Anchor, Compass, Map, Sword } from "lucide-react";
+import { div } from "framer-motion/client";
 
 const keywordResponses = [
   { keywords: ["nuit", "info"], response: "Ah la nuit de l'info, la plus légendaire des îles des caraïbes (après l'île aux singes bien évidemment) où des milliers de pirates se rassemblent pour piller et passer du temps à la taverne!" },
@@ -58,49 +60,51 @@ export default function MonkeyIslandChatbot() {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto bg-[url('/wood-texture.jpg')] bg-cover rounded-lg shadow-lg overflow-hidden border-4 border-amber-900">
-      <div className="bg-amber-900 text-yellow-100 p-4 text-center text-xl font-pirate">
-        Guybrush's Help Desk
-      </div>
-      <div className="h-[400px] p-4">
-        {messages.map((message, index) => (
-          <div
-            key={index}
-            className={`flex ${
-              message.isUser ? "justify-end" : "justify-start"
-            } mb-4`}
-          >
-            {!message.isUser && (
-              <div className="w-10 h-10 mr-2">
-                <img src="/guybrush.png" alt="Guybrush" />
-                <div>GT</div>
-              </div>
-            )}
-            <div
-              className={`rounded-lg p-2 max-w-[70%] ${
-                message.isUser ? "bg-blue-500 text-white" : "bg-gray-200"
-              }`}
-            >
-              {message.text}
-            </div>
+    <div className="h-screen w-full">
+      <div className="flex flex-col h-[500px] mx-auto bg-[url('/wood-texture.jpg')] bg-cover rounded-lg overflow-hidden border-4 border-[#37464F] ">
+        <div className="bg-tertiary p-4 flex items-center justify-between">
+          <h2 className="text-xl font-bold">Capitaine ChatBot</h2>
+          <div className="flex space-x-2">
+            <Skull className="h-6 w-6" />
+            <Anchor className="h-6 w-6" />
+            <Compass className="h-6 w-6" />
           </div>
-        ))}
-      </div>
-      <div className="p-4 bg-amber-800">
-        <div className="flex space-x-2">
-          <input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyPress={(e) => e.key === "Enter" && handleSend()}
-            placeholder="Ask yer question, ye scurvy dog!"
-            className="flex-grow bg-yellow-100 text-amber-900 placeholder-amber-700"
-          />
-          <button
-            onClick={handleSend}
-            className="bg-green-600 hover:bg-green-700 text-white"
-          >
-            Send
-          </button>
+        </div>
+        <div className="flex-grow p-4 overflow-y-auto overflow-x-hidden bg-primary">
+          {messages.map((message, index) => (
+            <div
+              key={index}
+              className={`mb-4 ${message.isUser ? "text-right" : "text-left"}`}
+            >
+              <div
+                className={`inline-block p-2 rounded-lg ${
+                  message.isUser
+                    ? "bg-blue-500 text-white"
+                    : "bg-secondary text-white"
+                }`}
+              >
+                {message.text}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="p-4 bg-tertiary">
+          <div className="flex space-x-2">
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyPress={(e) => e.key === "Enter" && handleSend()}
+              placeholder="Posez votre question, moussaillon !"
+              className="flex-grow text-white rounded-lg p-3 bg-secondary"
+            />
+            <button
+              onClick={handleSend}
+              className="bg-primary hover:bg-amber-700 flex p-5 rounded-lg"
+            >
+              <Map className="h-5 w-5 mr-2" />
+              Envoyer
+            </button>
+          </div>
         </div>
       </div>
     </div>

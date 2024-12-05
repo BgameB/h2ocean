@@ -131,7 +131,7 @@ export default function PageLesson({ data }: { data: IParcours }) {
           {currentQuiz && currentQuiz.type === "quiz" ? (
             <Quiz
               id={currentQuiz.id}
-              image={VercelIcon}
+              image={currentQuiz.image}
               answer1={currentQuiz.answer1}
               answer2={currentQuiz.answer2}
               answer3={currentQuiz.answer3!}
