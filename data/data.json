@@ -2,8 +2,8 @@
   "parcours": [
     {
       "id": 1,
-      "name": "Introduction",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam.",
+      "name": "Le cœur et les courants océaniques",
+      "description": "Bienvenue dans le Parcours du Cœur Océanique !</br> Dans ce parcours, vous découvrirez comment les courants océaniques fonctionnent comme un immense système circulatoire pour notre planète. Nous explorerons :</br></br>- Leur rôle dans la distribution de la chaleur et des nutriments, </br></br>- Leur impact sur le climat</br></br> - Et pourquoi leur équilibre est crucial pour la survie de la vie terrestre.</br></br>Préparez-vous à voyager au cœur des mécanismes vitaux de l’océan et à comprendre comment ils reflètent les fonctions du cœur humain.",
       "quizList": [
         {
           "id": 1,

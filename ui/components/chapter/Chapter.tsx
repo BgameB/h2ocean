@@ -99,9 +99,10 @@ export const Chapter = ({
           </a>
         </div>
       </div>
-      <div className="bg-primary p-[10px] text-[18px] rounded-[10px] w-full col-span-2 border-b-[3px] border-[#37464F]">
-        {description}
-      </div>
+      <div
+        className="bg-primary p-[10px] text-[18px] rounded-[10px] w-full col-span-2 border-b-[3px] border-[#37464F]"
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
     </section>
   );
 };
