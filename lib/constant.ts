@@ -7,4 +7,8 @@ export function calculatePercentage(current: number, max: number): number {
   return (current / max) * 100;
 }
 
+
+// LVL 2 -> 100xp
+// LVL 3 -> 500xp
+// LVL 4 -> 1000xp
 export const LEVELS_XP = [100, 500, 1000, 2000, 3500, 5500, 8000, 11000];

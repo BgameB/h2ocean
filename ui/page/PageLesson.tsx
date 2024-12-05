@@ -20,6 +20,8 @@ export default function PageLesson({ data }: { data: IParcours }) {
   const [goodAnswer, setGoodAnswer] = useState(0);
   const [BadAnswer, setBadAnswer] = useState(0);
   const [streak, setStreak] = useState(0);
+  const [xpReward, setXpReward] = useState(0);
+  const [hasGainedXP, setHasGainedXP] = useState(false);
 
   const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
   const [isQuizCorrect, setIsQuizCorrect] = useState(false);
@@ -34,6 +36,13 @@ export default function PageLesson({ data }: { data: IParcours }) {
     [parcours.id, getProgress]
   );
 
+  const handleAddXp = (xpGained: number) => {
+    if (!hasGainedXP) {
+      addXp(xpGained);
+      setHasGainedXP(true);
+    }
+  };
+
   const handleAnswer = (isCorrect: boolean) => {
     if (isCorrect) {
       setIsQuizCorrect(true);
@@ -47,15 +56,27 @@ export default function PageLesson({ data }: { data: IParcours }) {
     setTimeout(() => {
       setIsQuizCorrect(false);
       setIsQuizInCorrect(false);
-      setCurrentStep((prev) => Math.min(prev + 1, maxStep));
-      setCurrentQuizIndex((prev) => prev + 1);
 
-      if (currentStep + 1 === maxStep) {
-        if (initialProgress < goodAnswer) {
-          updateProgress(parcours.id, goodAnswer);
+      setCurrentStep((prevStep) => {
+        const nextStep = Math.min(prevStep + 1, maxStep);
+
+        if (nextStep === maxStep && !hasGainedXP) {
+          const updatedGoodAnswer = isCorrect ? goodAnswer + 1 : goodAnswer;
+          const progressDifference = updatedGoodAnswer - initialProgress;
+
+          if (progressDifference > 0) {
+            const xpGained = progressDifference * 100;
+            setXpReward(xpGained);
+
+            handleAddXp(xpGained / 2);
+
+            updateProgress(parcours.id, updatedGoodAnswer);
+          }
         }
-        addXp(100);
-      }
+
+        return nextStep;
+      });
+      setCurrentQuizIndex((prev) => prev + 1);
     }, 1000);
   };
 
@@ -137,14 +158,14 @@ export default function PageLesson({ data }: { data: IParcours }) {
                 totalQuestions={maxStep}
                 correctAnswers={goodAnswer}
                 wrongAnswers={BadAnswer}
-                xpGained={goodAnswer * 100} // 100 XP per correct answer
+                xpGained={xpReward}
               />
             </>
           )}
         </motion.div>
       </AnimatePresence>
 
-      {/* Indicateur de bonne réponse */}
+      {/* Indicateur réponse */}
       <AnimatePresence>
         {isQuizCorrect && (
           <motion.div

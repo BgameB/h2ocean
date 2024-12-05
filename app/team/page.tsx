@@ -16,8 +16,6 @@ export default function TeamPage() {
     },
   ];
 
-  console.log(data);
-
   return (
     <section className="mb-[100px]">
       <div className="max-w-screen-xl">
