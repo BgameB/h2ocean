@@ -2,36 +2,53 @@
 
 import React, { useState } from "react";
 
-const responses = [
-  "Ahoy there! Ye be needin' help with yer grog selection?",
-  "Arrr, that be a question worthy of a mighty pirate!",
-  "Ye best be careful, or ye might end up in Davy Jones' locker!",
-  "How appropriate, ye fight like a cow!",
-  "I'm shakin' in me boots! ...Oh wait, I don't wear boots.",
-  "Ye can't handle me wit and charm, ye scurvy dog!",
-  "I'm rubber, ye be glue!",
-  "I've spoken with apes more polite than you!",
-  "There are no words for how disgusting you are... In fact, I just vomited a little in my mouth.",
-  "Ye've got the manners of a drunken troll!",
+const keywordResponses = [
+  { keywords: ["nuit", "info"], response: "Ah la nuit de l'info, la plus légendaire des îles des caraïbes (après l'île aux singes bien évidemment) où des milliers de pirates se rassemblent pour piller et passer du temps à la taverne!" },
+  { keywords: ["pirate", "ship"], response: "Arrr, that be a question worthy of a mighty pirate!" },
+  { keywords: ["danger", "threat"], response: "Ye best be careful, or ye might end up in Davy Jones' locker!" },
+  { keywords: ["cow", "insult"], response: "How appropriate, ye fight like a cow!" },
+  { keywords: ["scared", "frightened"], response: "I'm shakin' in me boots! ...Oh wait, I don't wear boots." },
+  { keywords: ["charm", "wit"], response: "Ye can't handle me wit and charm, ye scurvy dog!" },
+  { keywords: ["glue", "rubber"], response: "I'm rubber, ye be glue!" },
+  { keywords: ["ape", "manners"], response: "I've spoken with apes more polite than you!" },
+  { keywords: ["disgusting", "vomit"], response: "There are no words for how disgusting you are... In fact, I just vomited a little in my mouth." },
+  { keywords: ["troll", "manners"], response: "Ye've got the manners of a drunken troll!" },
 ];
 
 export default function MonkeyIslandChatbot() {
-  const [messages, setMessages] = useState<{ text: string; isUser: boolean }[]>(
-    [
-      {
-        text: "Ahoy, matey! I be Guybrush Threepwood, mighty pirate and customer service extraordinaire! How can I help ye today?",
-        isUser: false,
-      },
-    ]
-  );
+  const [messages, setMessages] = useState<{ text: string; isUser: boolean }[]>([
+    {
+      text: "Ohé moussaillon! Je me nomme Guybrush Threepwood, pirate de légende, explorateur de l'île aux singes et assistant virtuel. Que puis-je faire pour vous?",
+      isUser: false,
+    },
+  ]);
   const [input, setInput] = useState("");
+
+  const getResponse = (userMessage: string): string => {
+    const lowercaseMessage = userMessage.toLowerCase();
+  
+    const matches = keywordResponses.map(({ keywords, response }) => {
+      const matchCount = keywords.filter((keyword) => lowercaseMessage.includes(keyword)).length;
+      return { response, matchCount };
+    });
+  
+    const maxMatches = Math.max(...matches.map((match) => match.matchCount));
+  
+    if (maxMatches === 0) {
+      return "Arrr, I don't quite understand ye. Try speakin' like a pirate!";
+    }
+  
+    const bestMatches = matches.filter((match) => match.matchCount === maxMatches);
+  
+    return bestMatches[Math.floor(Math.random() * bestMatches.length)].response;
+  };
+  
 
   const handleSend = () => {
     if (input.trim()) {
       setMessages((prev) => [...prev, { text: input, isUser: true }]);
       setTimeout(() => {
-        const response =
-          responses[Math.floor(Math.random() * responses.length)];
+        const response = getResponse(input);
         setMessages((prev) => [...prev, { text: response, isUser: false }]);
       }, 1000);
       setInput("");
