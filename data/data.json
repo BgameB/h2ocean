@@ -7,12 +7,12 @@
       "quizList": [
         {
           "id": 1,
-          "image": "/vercel.svg",
-          "question": "Quelle est cette forme géométrique ?",
-          "answer1": "Carré",
-          "answer2": "Rectangle",
-          "answer3": "Triangle",
-          "correctAnswer": "Triangle"
+          "image": "img/picture/ia_intro.jpg",
+          "question": "Quel est le rôle principal des courants marins dans l’océan ?",
+          "answer1": "Transporter les déchets plastiques.",
+          "answer2": "Réchauffer les océans polaires uniquement.",
+          "answer3": "Distribuer la chaleur et les nutriments à travers la planète.",
+          "correctAnswer": "Distribuer la chaleur et les nutriments à travers la planète."
         },
         {
           "id": 2,

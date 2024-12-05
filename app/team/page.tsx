@@ -1,6 +1,13 @@
 export default function TeamPage() {
   const data = [
     {
+      name: "Adan Green",
+      desc: "Bonnie drives the technical strategy of the flowbite platform and brand.",
+      imgSrc:
+        "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png",
+      imgAlt: "Avatar",
+    },
+    {
       name: "Bonnie Green",
       desc: " Bonnie drives the technical strategy of the flowbite platform and brand.",
       imgSrc:
