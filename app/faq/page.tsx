@@ -4,15 +4,17 @@ import React, { useState } from "react";
 
 const keywordResponses = [
   { keywords: ["nuit", "info"], response: "Ah la nuit de l'info, la plus légendaire des îles des caraïbes (après l'île aux singes bien évidemment) où des milliers de pirates se rassemblent pour piller et passer du temps à la taverne!" },
-  { keywords: ["pirate", "ship"], response: "Arrr, that be a question worthy of a mighty pirate!" },
-  { keywords: ["danger", "threat"], response: "Ye best be careful, or ye might end up in Davy Jones' locker!" },
-  { keywords: ["cow", "insult"], response: "How appropriate, ye fight like a cow!" },
-  { keywords: ["scared", "frightened"], response: "I'm shakin' in me boots! ...Oh wait, I don't wear boots." },
-  { keywords: ["charm", "wit"], response: "Ye can't handle me wit and charm, ye scurvy dog!" },
-  { keywords: ["glue", "rubber"], response: "I'm rubber, ye be glue!" },
-  { keywords: ["ape", "manners"], response: "I've spoken with apes more polite than you!" },
-  { keywords: ["disgusting", "vomit"], response: "There are no words for how disgusting you are... In fact, I just vomited a little in my mouth." },
-  { keywords: ["troll", "manners"], response: "Ye've got the manners of a drunken troll!" },
+  { "keywords": ["pirate", "navire"], "response": "Un navire pirate doit toujours être prêt pour l'aventure ! Il te faut une bonne équipe, des voiles solides et une carte au trésor." },
+  { "keywords": ["danger", "menace"], "response": "Si tu vois un pavillon noir à l'horizon, prépare-toi : ça sent l'abordage !" },
+  { "keywords": ["vache", "combat"], "response": "C'est une drôle de comparaison... mais peut-être veux-tu parler d'une stratégie de charge frontale ?" },
+  { "keywords": ["peur", "effrayé"], "response": "Rien à craindre, matelot, tant qu'on a le vent en poupe et l'équipage à l'écoute." },
+  { "keywords": ["charme", "esprit"], "response": "Dans un duel de répliques ou d'esprit, tout est question de répartie et d'assurance !" },
+  { "keywords": ["colle", "réparation"], "response": "Un bon pirate sait toujours comment réparer son navire avec de la colle et des planches ! Mais assure-toi qu'elles résistent à l'eau de mer." },
+  { "keywords": ["singe", "compagnon"], "response": "Un singe à bord ? Pourquoi pas, ils sont agiles et peuvent aider à atteindre les cordages les plus hauts !" },
+  { "keywords": ["dégueulasse", "propreté"], "response": "Un navire propre est un navire efficace. Fais attention à l'hygiène, même sur les mers !" },
+  { "keywords": ["troll", "navigation"], "response": "Si tu croises un troll marin, évite ses eaux troubles et reste sur ta route. Prudence avant tout !" },
+  { "keywords": ["rhume", "santé"], "response": "Attraper un rhume en pleine mer peut arriver, surtout avec les vents frais. Reste au chaud et bois un bon grog !" },
+  { "keywords": ["canon", "bataille"], "response": "Assure-toi que les canons sont bien chargés et les boulets prêts avant toute bataille navale. La stratégie fait aussi la différence !" },
 ];
 
 export default function MonkeyIslandChatbot() {
