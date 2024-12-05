@@ -30,6 +30,11 @@ export const Navbar = ({ className = "" }: Props) => {
       text: "EQUIPE",
       icon: <GlobalIcon img={teamIcon} alt="Pictogramme d'équipe" />,
     },
+    {
+      href: "/faq",
+      text: "EQUIPE",
+      icon: <GlobalIcon img={teamIcon} alt="Pictogramme d'équipe" />,
+    },
   ];
 
   return (
