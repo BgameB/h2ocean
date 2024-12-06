@@ -11,8 +11,15 @@ const MiniGame1: React.FC = () => {
   const [direction, setDirection] = useState(1);
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
 
-  const greenZoneStart = 40; // Début de la zone verte (en %)
-  const greenZoneEnd = 60; // Fin de la zone verte (en %)
+  const [greenZoneStart, setGreenZoneStart] = useState(0); // Début de la zone verte (en %)
+  const [greenZoneEnd, setGreenZoneEnd] = useState(0);
+
+  const generateGreenZone = () => {
+    const start = Math.floor(Math.random() * 95);
+    const end = start + 5;
+    setGreenZoneStart(start);
+    setGreenZoneEnd(end);
+  }
 
   useEffect(() => {
     let animation: number | null = null;
@@ -62,6 +69,7 @@ const MiniGame1: React.FC = () => {
       {!gameActive ? (
         <button
           onClick={() => {
+            generateGreenZone();
             setGameActive(true);
             setIsSuccess(null); // Réinitialise le statut
             setPosition(0);
@@ -143,7 +151,7 @@ const MiniGame2: React.FC = () => {
   
       if (timeLeft === 0) {
         setGameActive(false);
-        if (Math.abs(sliderValue - targetNumber) <= 0.5) {
+        if (Math.abs(sliderValue - targetNumber) <= 2) {
           setIsSuccess(true); // Succès
         } else {
           setIsSuccess(false); // Échec
@@ -186,7 +194,7 @@ const MiniGame2: React.FC = () => {
       ) : (
         <div style={{ textAlign: "center", marginTop: "20px" }}>
           <p>
-            Sélectionnez le nombre <strong>{targetNumber}</strong>
+            Sélectionnez le nombre <strong>{targetNumber}</strong> (+/- 2)
           </p>
           <input
             type="range"
