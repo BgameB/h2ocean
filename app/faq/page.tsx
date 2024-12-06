@@ -16,9 +16,9 @@ const keywordResponses = [
   { keywords: ["rhume", "santé", "malade", "vent"], response: "Attraper un rhume en pleine mer peut arriver, surtout avec les vents frais. Reste au chaud et bois un bon grog !" },
   { keywords: ["canon", "bataille", "stratég", "boulet"], response: "Assure-toi que les canons sont bien chargés et les boulets prêts avant toute bataille navale. La stratégie fait aussi la différence !" },
   { keywords: ["aide", "command", "help"], response: "Tout pirate qui se respecte ne demande jamais d'aide. Je vais te donner un conseil par contre: évites à tout prix le repaire de LeChuck sur l'île aux singes!"},
-  { keywords: ["lechuck", "danger", "nemesis", "ennemi"], response: "LeChuck, mon ennemi juré. Il est très dangereux donc je te déconseille de trop t'approcher de lui."},
+  { keywords: ["lechuck", "danger", "nemesis", "ennemi"], response: "LeChuck, mon ennemi juré. Il est très dangereux donc je te déconseille de trop t'approcher de lui, surtout si tu t'appelles Eleine Marley."},
   { keywords: ["singe", "île"], response: "La légendaire île aux singes... Peu sont ceux qui ont pu fouler le sable de cette île. Attention, le repère de LeChuck s'y trouve!"},
-  { keywords: ["elaine", "marley", "manoir"], response: "Elaine Marley, la femme vivant au manoir de l'île de mêlée. Tu savais que je l'avais sauvée quand elle s'est fait enlever par LeChuck dans The Secret of Monkey Island™"},
+  { keywords: ["elaine", "marley", "manoir"], response: "Elaine Marley, la femme vivant au manoir de l'île de mêlée. Tu savais que je l'avais sauvée quand elle s'est fait enlever par LeChuck dans The Secret of Monkey Island®"},
 ];
 
 export default function MonkeyIslandChatbot() {
