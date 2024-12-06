@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 
 import teamIcon from "@/img/icon/teamIcon.svg";
 import FaqIcon from "@/img/icon/faqIcon.png";
+import LOGO from "@/img/icon/LOGO.png";
 
 interface Props {
   className: string;
@@ -45,9 +46,12 @@ export const Navbar = ({ className = "" }: Props) => {
         className
       )}
     >
-      <h1 className="font-black text-[40px] mb-[50px] max-md:hidden text-center text-blue-400">
+      <div className="relative w-[220px] h-[150px] m-auto max-md:hidden">
+        <GlobalIcon img={LOGO} alt="Pictogramme d'équipe" />
+      </div>
+      {/* <h1 className="font-black text-[40px] mb-[50px] max-md:hidden text-center text-blue-400">
         H2OCEAN
-      </h1>
+      </h1> */}
 
       <section className="flex flex-col gap-[20px] max-md:flex-row max-md:justify-evenly">
         {navItems.map((item, i) => {

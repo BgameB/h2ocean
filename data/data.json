@@ -8,7 +8,7 @@
       "quizList": [
         {
           "id": 1,
-          "image": "/img/ressources/courants_distribution.jpg",
+          "image": "/img/ressources/courants_distribution.jpeg",
           "question": "Quel est le rôle principal des courants marins dans l’océan ?",
           "answer1": "Transporter les déchets.",
           "answer2": "Distribuer la chaleur et les nutriments.",
@@ -17,7 +17,7 @@
         },
         {
           "id": 2,
-          "image": "/img/ressources/pompe_thermohaline.jpg",
+          "image": "/img/ressources/pompe_thermohaline.png",
           "question": "Quelle est la pompe naturelle des courants marins ?",
           "answer1": "Les vents.",
           "answer2": "La tectonique des plaques.",
@@ -26,7 +26,7 @@
         },
         {
           "id": 3,
-          "image": "/img/ressources/climat_stable.jpg",
+          "image": "/img/ressources/climat_stable.jpeg",
           "question": "Comment les courants marins influencent-ils le climat ?",
           "answer1": "Ils stabilisent les températures globales.",
           "answer2": "Ils augmentent l’intensité des tempêtes.",
@@ -35,7 +35,7 @@
         },
         {
           "id": 4,
-          "image": "/img/ressources/fonte_glaciers.jpg",
+          "image": "/img/ressources/fonte_glaciers.jpeg",
           "question": "Pourquoi la fonte des glaces perturbe-t-elle les courants ?",
           "answer1": "Elle ralentit les vents.",
           "answer2": "Elle diminue la salinité de l’eau.",
@@ -123,7 +123,7 @@
       "quizList": [
         {
           "id": 1,
-          "image": "/img/ressources/phytoplancton.jpg",
+          "image": "/img/ressources/phytoplancton.webp",
           "question": "Quelle est la principale source d'oxygène produit par l'océan ?",
           "answer1": "Les coraux.",
           "answer2": "Les phytoplanctons.",
@@ -132,7 +132,7 @@
         },
         {
           "id": 2,
-          "image": "/img/ressources/photosynthese.jpg",
+          "image": "/img/ressources/photosynthese.png",
           "question": "Quel processus permet aux phytoplanctons de produire de l'oxygène ?",
           "answer1": "La photosynthèse.",
           "answer2": "La respiration.",

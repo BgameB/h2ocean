@@ -94,7 +94,7 @@ export default function PageLesson({ data }: { data: IParcours }) {
             </div>
           </div>
           <div className="flex justify-between items-center mb-4">
-            <div className="flex items-center space-x-2">
+            {/* <div className="flex items-center space-x-2">
               {[...Array(3)].map((_, index) => (
                 <Heart
                   key={index}
@@ -105,7 +105,7 @@ export default function PageLesson({ data }: { data: IParcours }) {
                   }`}
                 />
               ))}
-            </div>
+            </div> */}
             <div className="flex items-center space-x-2">
               <Star className="w-6 h-6 text-yellow-400 fill-current" />
               <span className="font-bold">{goodAnswer}</span>
