@@ -143,7 +143,7 @@ const MiniGame2: React.FC = () => {
   
       if (timeLeft === 0) {
         setGameActive(false);
-        if (Math.abs(sliderValue - targetNumber) <= 0.5) {
+        if (Math.abs(sliderValue - targetNumber) <= 10) {
           setIsSuccess(true); // Succès
         } else {
           setIsSuccess(false); // Échec
