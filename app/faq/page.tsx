@@ -19,6 +19,7 @@ const keywordResponses = [
   { keywords: ["lechuck", "danger", "nemesis", "ennemi"], response: "LeChuck, mon ennemi juré. Il est très dangereux donc je te déconseille de trop t'approcher de lui, surtout si tu t'appelles Eleine Marley."},
   { keywords: ["singe", "île"], response: "La légendaire île aux singes... Peu sont ceux qui ont pu fouler le sable de cette île. Attention, le repère de LeChuck s'y trouve!"},
   { keywords: ["elaine", "marley", "manoir"], response: "Elaine Marley, la femme vivant au manoir de l'île de mêlée. Tu savais que je l'avais sauvée quand elle s'est fait enlever par LeChuck dans The Secret of Monkey Island®"},
+  { keywords: ["ar"], response: "Arrrr."}
 ];
 
 export default function MonkeyIslandChatbot() {
