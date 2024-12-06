@@ -38,8 +38,8 @@ export default function QuestsPage() {
               text="Terminer le chapitre n°1"
               color="#93d333"
               reward={"Rien"}
-              current={0}
-              max={10}
+              current={getProgress(1) === 10 ? 1 : 0}
+              max={1}
             />
             <QuestComponent
               id={3}
@@ -48,8 +48,8 @@ export default function QuestsPage() {
               text="Etre niveau 5"
               color="#93d333"
               reward={"Badge"}
-              current={0}
-              max={0}
+              current={getLevelFromXP(user.xp)}
+              max={5}
             />
           </div>
           {/* <div className="border-[#37464F] border-[3px]  p-[20px] rounded-[20px] bg-tertiary w-full">
