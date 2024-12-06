@@ -151,7 +151,7 @@ const MiniGame2: React.FC = () => {
   
       if (timeLeft === 0) {
         setGameActive(false);
-        if (Math.abs(sliderValue - targetNumber) <= 1) {
+        if (Math.abs(sliderValue - targetNumber) <= 2) {
           setIsSuccess(true); // Succès
         } else {
           setIsSuccess(false); // Échec
@@ -194,7 +194,7 @@ const MiniGame2: React.FC = () => {
       ) : (
         <div style={{ textAlign: "center", marginTop: "20px" }}>
           <p>
-            Sélectionnez le nombre <strong>{targetNumber}</strong> (+/- 1)
+            Sélectionnez le nombre <strong>{targetNumber}</strong> (+/- 2)
           </p>
           <input
             type="range"
