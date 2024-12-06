@@ -21,6 +21,7 @@ export interface IQuizCorrect {
 export interface IParcours {
   id: number;
   name: string;
+  img: string;
   description: string;
   quizList: IQuiz[];
   quizCorrectList: IQuizCorrect[];

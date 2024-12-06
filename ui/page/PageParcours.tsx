@@ -56,7 +56,7 @@ export default function PageParcours({ data }: IParcours[]) {
                   parcour={parcour}
                   className="mx-auto"
                   title={parcour.name}
-                  img={landscape}
+                  img={parcour.img}
                   alt="picto"
                   description={parcour.description}
                   current={getProgress(parcour.id)}

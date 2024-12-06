@@ -2,64 +2,346 @@
   "parcours": [
     {
       "id": 1,
-      "name": "Le cœur et les courants océaniques",
-      "description": "Bienvenue dans le Parcours du Cœur Océanique !</br> Dans ce parcours, vous découvrirez comment les courants océaniques fonctionnent comme un immense système circulatoire pour notre planète. Nous explorerons :</br></br>- Leur rôle dans la distribution de la chaleur et des nutriments, </br></br>- Leur impact sur le climat</br></br> - Et pourquoi leur équilibre est crucial pour la survie de la vie terrestre.</br></br>Préparez-vous à voyager au cœur des mécanismes vitaux de l’océan et à comprendre comment ils reflètent les fonctions du cœur humain.",
+      "img": "/img/template/Serie1.jpg",
+      "name": "Le cœur et les courants marins",
+      "description": "Dans ce parcours, découvrez comment les courants marins agissent comme le système circulatoire de la planète. Vous apprendrez :</br></br>- Leur rôle dans le transport de la chaleur et des nutriments,</br></br>- Leur impact sur la stabilité du climat,</br></br>- Et les conséquences de leur dysfonctionnement.</br></br>Plongez au cœur des mécanismes qui régulent nos océans et découvrez comment préserver leur équilibre vital.",
       "quizList": [
         {
           "id": 1,
-          "image": "/img/ressources/courants_chaleur.jpg",
+          "image": "/img/ressources/courants_distribution.jpg",
           "question": "Quel est le rôle principal des courants marins dans l’océan ?",
-          "answer1": "Transporter les déchets plastiques.",
-          "answer2": "Réchauffer les océans polaires uniquement.",
-          "answer3": "Distribuer la chaleur et les nutriments à travers la planète.",
-          "correctAnswer": "Distribuer la chaleur et les nutriments à travers la planète."
+          "answer1": "Transporter les déchets.",
+          "answer2": "Distribuer la chaleur et les nutriments.",
+          "answer3": "Réchauffer uniquement les régions polaires.",
+          "correctAnswer": "Distribuer la chaleur et les nutriments."
+        },
+        {
+          "id": 2,
+          "image": "/img/ressources/pompe_thermohaline.jpg",
+          "question": "Quelle est la pompe naturelle des courants marins ?",
+          "answer1": "Les vents.",
+          "answer2": "La tectonique des plaques.",
+          "answer3": "La pompe thermohaline.",
+          "correctAnswer": "La pompe thermohaline."
+        },
+        {
+          "id": 3,
+          "image": "/img/ressources/climat_stable.jpg",
+          "question": "Comment les courants marins influencent-ils le climat ?",
+          "answer1": "Ils stabilisent les températures globales.",
+          "answer2": "Ils augmentent l’intensité des tempêtes.",
+          "answer3": "Ils n’ont aucun impact.",
+          "correctAnswer": "Ils stabilisent les températures globales."
+        },
+        {
+          "id": 4,
+          "image": "/img/ressources/fonte_glaciers.jpg",
+          "question": "Pourquoi la fonte des glaces perturbe-t-elle les courants ?",
+          "answer1": "Elle ralentit les vents.",
+          "answer2": "Elle diminue la salinité de l’eau.",
+          "answer3": "Elle augmente la densité de l’eau.",
+          "correctAnswer": "Elle diminue la salinité de l’eau."
+        },
+        {
+          "id": 5,
+          "image": "/img/ressources/circulation_globale.jpg",
+          "question": "Quel courant est surnommé 'le tapis roulant global' ?",
+          "answer1": "Le Gulf Stream.",
+          "answer2": "La circulation thermohaline.",
+          "answer3": "Les marées.",
+          "correctAnswer": "La circulation thermohaline."
         }
       ],
       "quizCorrectList": [
         {
-          "id": 1,
-          "question": "Quelles sont les deux plus grandes planètes du système solaire ?",
-          "answer1": "Mars",
-          "answer2": "Jupiter",
-          "answer3": "Saturne",
-          "answer4": "Vénus",
-          "correctAnswers": ["Jupiter", "Saturne"]
+          "id": 6,
+          "question": "Quels sont les impacts d’un dysfonctionnement des courants marins ?",
+          "answer1": "Un déséquilibre climatique.",
+          "answer2": "Des températures instables.",
+          "answer3": "Une hausse de la biodiversité.",
+          "answer4": "Une réduction des marées.",
+          "correctAnswers": [
+            "Un déséquilibre climatique.",
+            "Des températures instables."
+          ]
+        },
+        {
+          "id": 7,
+          "question": "Quels facteurs influencent la circulation thermohaline ?",
+          "answer1": "La température de l’eau.",
+          "answer2": "La salinité de l’eau.",
+          "answer3": "Les vents de surface.",
+          "answer4": "La densité de l’eau.",
+          "correctAnswers": [
+            "La température de l’eau.",
+            "La salinité de l’eau."
+          ]
+        },
+        {
+          "id": 8,
+          "question": "Quels mécanismes soutiennent la biodiversité grâce aux courants marins ?",
+          "answer1": "Le transport des nutriments.",
+          "answer2": "La stabilisation des climats régionaux.",
+          "answer3": "L’augmentation de la salinité.",
+          "answer4": "Le réchauffement des eaux polaires.",
+          "correctAnswers": [
+            "Le transport des nutriments.",
+            "La stabilisation des climats régionaux."
+          ]
+        },
+        {
+          "id": 9,
+          "question": "Quels sont les bénéfices d’un bon fonctionnement des courants marins ?",
+          "answer1": "Stabilisation des températures.",
+          "answer2": "Transport des nutriments.",
+          "answer3": "Augmentation de la pollution plastique.",
+          "answer4": "Régulation des zones mortes océaniques.",
+          "correctAnswers": [
+            "Stabilisation des températures.",
+            "Transport des nutriments."
+          ]
+        },
+        {
+          "id": 10,
+          "question": "Comment réduire les perturbations des courants marins ?",
+          "answer1": "Réduire les émissions de CO2.",
+          "answer2": "Utiliser des technologies véliques pour les navires.",
+          "answer3": "Augmenter les forages marins.",
+          "answer4": "Réchauffer artificiellement les eaux.",
+          "correctAnswers": [
+            "Réduire les émissions de CO2.",
+            "Utiliser des technologies véliques pour les navires."
+          ]
         }
       ]
     },
     {
       "id": 2,
-      "name": "Mise en place",
-      "description": "Apprenez les bases de notre formation.",
+      "img": "/img/template/Serie2.jpg",
+      "name": "Les poumons et les échanges gazeux",
+      "description": "Dans ce parcours, découvrez comment l'océan agit comme les poumons de la planète. Vous apprendrez :</br></br>- Le rôle des phytoplanctons dans la production d'oxygène,</br></br>- L'impact de l'absorption de CO2 par l'océan,</br></br>- Les conséquences de l'acidification des océans.</br></br>Plongez dans les mécanismes qui permettent aux océans de respirer et de maintenir la vie sur Terre.",
       "quizList": [
         {
           "id": 1,
-          "image": "/vercel.svg",
-          "question": "Quelle est cette forme géométrique ?",
-          "answer1": "Carré",
-          "answer2": "Rectangle",
-          "answer3": "Triangle",
-          "correctAnswer": "Triangle"
+          "image": "/img/ressources/phytoplancton.jpg",
+          "question": "Quelle est la principale source d'oxygène produit par l'océan ?",
+          "answer1": "Les coraux.",
+          "answer2": "Les phytoplanctons.",
+          "answer3": "Les poissons.",
+          "correctAnswer": "Les phytoplanctons."
         },
         {
           "id": 2,
-          "image": "/vercel.svg",
-          "question": "Pourquoi le 2+2 ?",
-          "answer1": "4",
-          "answer2": "8",
-          "answer3": "2",
-          "correctAnswer": "4"
+          "image": "/img/ressources/photosynthese.jpg",
+          "question": "Quel processus permet aux phytoplanctons de produire de l'oxygène ?",
+          "answer1": "La photosynthèse.",
+          "answer2": "La respiration.",
+          "answer3": "La dissolution des gaz.",
+          "correctAnswer": "La photosynthèse."
+        },
+        {
+          "id": 3,
+          "image": "/img/ressources/co2_absorption.jpg",
+          "question": "Quel gaz les océans absorbent-ils en grande quantité ?",
+          "answer1": "L'azote.",
+          "answer2": "L'oxygène.",
+          "answer3": "Le dioxyde de carbone (CO2).",
+          "correctAnswer": "Le dioxyde de carbone (CO2)."
+        },
+        {
+          "id": 4,
+          "image": "/img/ressources/acidification.jpg",
+          "question": "Quelle est la conséquence d'une absorption excessive de CO2 par l'océan ?",
+          "answer1": "Une augmentation de la biodiversité.",
+          "answer2": "L'acidification des océans.",
+          "answer3": "Une réduction des courants marins.",
+          "correctAnswer": "L'acidification des océans."
+        },
+        {
+          "id": 5,
+          "image": "/img/ressources/impact_organismes.jpg",
+          "question": "Quels organismes sont principalement affectés par l'acidification des océans ?",
+          "answer1": "Les poissons prédateurs.",
+          "answer2": "Les coraux et les organismes calcaires.",
+          "answer3": "Les algues marines.",
+          "correctAnswer": "Les coraux et les organismes calcaires."
         }
       ],
       "quizCorrectList": [
         {
+          "id": 6,
+          "question": "Quels sont les rôles principaux des phytoplanctons dans l'océan ?",
+          "answer1": "Produire de l'oxygène.",
+          "answer2": "Absorber du CO2.",
+          "answer3": "Augmenter la température des océans.",
+          "answer4": "Servir de base à la chaîne alimentaire.",
+          "correctAnswers": [
+            "Produire de l'oxygène.",
+            "Servir de base à la chaîne alimentaire."
+          ]
+        },
+        {
+          "id": 7,
+          "question": "Quels sont les effets de l'acidification des océans sur les écosystèmes marins ?",
+          "answer1": "Blanchissement des coraux.",
+          "answer2": "Réduction des populations de coquillages.",
+          "answer3": "Augmentation de la biodiversité.",
+          "answer4": "Ralentissement des courants marins.",
+          "correctAnswers": [
+            "Blanchissement des coraux.",
+            "Réduction des populations de coquillages."
+          ]
+        },
+        {
+          "id": 8,
+          "question": "Quels mécanismes naturels soutiennent les échanges gazeux dans l'océan ?",
+          "answer1": "Les courants de surface.",
+          "answer2": "La dissolution des gaz dans l'eau froide.",
+          "answer3": "Les marées lunaires.",
+          "answer4": "Les éruptions volcaniques sous-marines.",
+          "correctAnswers": [
+            "Les courants de surface.",
+            "La dissolution des gaz dans l'eau froide."
+          ]
+        },
+        {
+          "id": 9,
+          "question": "Quels impacts le CO2 a-t-il lorsqu'il est absorbé par l'océan ?",
+          "answer1": "Augmentation de l'acidité de l'eau.",
+          "answer2": "Perturbation des organismes marins calcaires.",
+          "answer3": "Augmentation de la photosynthèse des phytoplanctons.",
+          "answer4": "Réduction de l'oxygène produit.",
+          "correctAnswers": [
+            "Augmentation de l'acidité de l'eau.",
+            "Perturbation des organismes marins calcaires."
+          ]
+        },
+        {
+          "id": 10,
+          "question": "Comment peut-on limiter l'acidification des océans ?",
+          "answer1": "Réduire les émissions de CO2.",
+          "answer2": "Protéger les phytoplanctons.",
+          "answer3": "Augmenter l'utilisation des navires véliques.",
+          "answer4": "Réchauffer les eaux profondes.",
+          "correctAnswers": [
+            "Réduire les émissions de CO2.",
+            "Protéger les phytoplanctons."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "img": "/img/template/Serie3.jpg",
+      "name": "Les récifs coralliens et le système immunitaire",
+      "description": "Dans ce parcours, découvrez comment les récifs coralliens protègent les écosystèmes marins, comme le système immunitaire protège notre corps. Vous apprendrez :</br></br>- Leur rôle dans la biodiversité marine,</br></br>- Les impacts du blanchissement des coraux,</br></br>- Les mesures pour les protéger et les restaurer.</br></br>Plongez dans l’univers des récifs coralliens, véritables remparts vivants des océans.",
+      "quizList": [
+        {
           "id": 1,
-          "question": "Quelles sont les deux plus grandes planètes du système solaire ?",
-          "answer1": "Mars",
-          "answer2": "Jupiter",
-          "answer3": "Saturne",
-          "answer4": "Vénus",
-          "correctAnswers": ["Jupiter", "Saturne"]
+          "image": "/img/ressources/récifs_biodiversité.jpg",
+          "question": "Quel rôle jouent les récifs coralliens dans l'écosystème marin ?",
+          "answer1": "Ils produisent la majorité de l'oxygène terrestre.",
+          "answer2": "Ils abritent une biodiversité exceptionnelle et protègent les côtes.",
+          "answer3": "Ils augmentent la température des océans.",
+          "correctAnswer": "Ils abritent une biodiversité exceptionnelle et protègent les côtes."
+        },
+        {
+          "id": 2,
+          "image": "/img/ressources/blanchissement.jpg",
+          "question": "Qu'est-ce que le blanchissement des coraux ?",
+          "answer1": "Une adaptation des coraux pour résister à la chaleur.",
+          "answer2": "Une perte de leurs algues symbiotiques due au stress environnemental.",
+          "answer3": "Un phénomène naturel sans conséquence sur l'écosystème.",
+          "correctAnswer": "Une perte de leurs algues symbiotiques due au stress environnemental."
+        },
+        {
+          "id": 3,
+          "image": "/img/ressources/protection_côtes.jpg",
+          "question": "Comment les récifs coralliens protègent-ils les côtes ?",
+          "answer1": "En filtrant les polluants des eaux côtières.",
+          "answer2": "En absorbant l'énergie des vagues et en limitant l'érosion.",
+          "answer3": "En augmentant la salinité des eaux côtières.",
+          "correctAnswer": "En absorbant l'énergie des vagues et en limitant l'érosion."
+        },
+        {
+          "id": 4,
+          "image": "/img/ressources/pollution.jpg",
+          "question": "Quel est l'un des principaux dangers pour les récifs coralliens ?",
+          "answer1": "La surpêche uniquement.",
+          "answer2": "La pollution plastique et chimique.",
+          "answer3": "La montée des eaux due à la fonte des glaces.",
+          "correctAnswer": "La pollution plastique et chimique."
+        },
+        {
+          "id": 5,
+          "image": "/img/ressources/restauration.jpg",
+          "question": "Quelle mesure peut aider à restaurer les récifs coralliens ?",
+          "answer1": "La plantation de nouveaux coraux.",
+          "answer2": "L'augmentation de la pêche dans les récifs.",
+          "answer3": "Le renforcement de la salinité des eaux.",
+          "correctAnswer": "La plantation de nouveaux coraux."
+        }
+      ],
+      "quizCorrectList": [
+        {
+          "id": 6,
+          "question": "Quels sont les bénéfices des récifs coralliens pour les écosystèmes marins ?",
+          "answer1": "Protection contre les vagues et les tempêtes.",
+          "answer2": "Régulation de la température des océans.",
+          "answer3": "Habitat pour une biodiversité marine exceptionnelle.",
+          "answer4": "Augmentation de l'acidité de l'eau.",
+          "correctAnswers": [
+            "Protection contre les vagues et les tempêtes.",
+            "Habitat pour une biodiversité marine exceptionnelle."
+          ]
+        },
+        {
+          "id": 7,
+          "question": "Quelles sont les causes principales du blanchissement des coraux ?",
+          "answer1": "Le réchauffement des océans.",
+          "answer2": "L'acidification des océans.",
+          "answer3": "L'augmentation de la biodiversité.",
+          "answer4": "L'absence de poissons dans les récifs.",
+          "correctAnswers": [
+            "Le réchauffement des océans.",
+            "L'acidification des océans."
+          ]
+        },
+        {
+          "id": 8,
+          "question": "Quels impacts ont les récifs coralliens sur les activités humaines ?",
+          "answer1": "Ils protègent les populations côtières contre les tempêtes.",
+          "answer2": "Ils favorisent le tourisme.",
+          "answer3": "Ils augmentent les niveaux de CO2 dans l'atmosphère.",
+          "answer4": "Ils fournissent des ressources pour la pêche.",
+          "correctAnswers": [
+            "Ils protègent les populations côtières contre les tempêtes.",
+            "Ils favorisent le tourisme."
+          ]
+        },
+        {
+          "id": 9,
+          "question": "Quelles mesures sont essentielles pour préserver les récifs coralliens ?",
+          "answer1": "Réduire la pollution plastique et chimique.",
+          "answer2": "Éviter les pratiques de pêche destructrices.",
+          "answer3": "Augmenter la température des océans.",
+          "answer4": "Protéger les zones marines sensibles.",
+          "correctAnswers": [
+            "Réduire la pollution plastique et chimique.",
+            "Protéger les zones marines sensibles."
+          ]
+        },
+        {
+          "id": 10,
+          "question": "Quels sont les effets à long terme d’un blanchissement persistant des coraux ?",
+          "answer1": "La destruction des habitats marins.",
+          "answer2": "Une augmentation de l’érosion côtière.",
+          "answer3": "Une amélioration des écosystèmes locaux.",
+          "answer4": "Une perte massive de biodiversité.",
+          "correctAnswers": [
+            "La destruction des habitats marins.",
+            "Une augmentation de l’érosion côtière."
+          ]
         }
       ]
     }

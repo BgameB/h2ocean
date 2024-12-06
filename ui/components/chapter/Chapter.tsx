@@ -11,7 +11,7 @@ interface Props {
   description: string;
   current: number;
   max: number;
-  img: StaticImageData;
+  img: string;
   alt: string;
   className?: string;
   imgClassName?: string;
@@ -36,13 +36,7 @@ export const Chapter = ({
       )}
     >
       <div className="relative max-w-[320px] h-[220px] bg-black rounded-[5px] overflow-hidden max-sm:max-w-full">
-        <Image
-          src={img}
-          alt={alt}
-          className={cn("object-cover", imgClassName)}
-          placeholder="blur"
-          fill
-        />
+        <img src={img} alt={alt} className={cn("object-cover", imgClassName)} />
       </div>
       <div className="flex flex-col">
         <p className="mb-[10px] text-[25px] font-bold">{title}</p>
@@ -72,13 +66,7 @@ export const Chapter = ({
       )}
     >
       <div className="relative max-w-[320px] h-[220px] bg-black rounded-[5px] overflow-hidden max-sm:max-w-full">
-        <Image
-          src={img}
-          alt={alt}
-          className={cn("object-cover", imgClassName)}
-          placeholder="blur"
-          fill
-        />
+        <img src={img} alt={alt} className={cn("object-cover", imgClassName)} />
       </div>
       <div className="flex flex-col">
         <p className="mb-[10px] text-[25px] font-bold">{title}</p>
