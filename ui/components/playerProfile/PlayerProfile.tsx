@@ -80,7 +80,7 @@ export default function PlayerProfile({ level, maxLevel, xp }: PlayerProfileProp
             <h3 className="text-md font-semibold">Niveau {level}</h3>
             <p className="text-md text-muted-foreground">{level}/{maxLevel}</p>
           </div>
-          <ProgressBar current={level} max={maxLevel}/>
+          <ProgressBar current={xp} max={maxLevel}/>
         </div>
         <div className="flex justify-between items-center">
           <h3 className="text-lg font-semibold">XP :</h3>

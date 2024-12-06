@@ -8,11 +8,11 @@ interface Props {
   id: number;
   className?: string;
   text: string;
-  reward: number;
+  reward: string;
   current: number;
   max: number;
   color: string;
-  
+
   icon?: any;
 }
 
@@ -47,30 +47,32 @@ export const Quest = ({
   current,
   max,
 }: Props) => {
-
   return (
-    <div className={clsx("grid grid-cols-2 p-[25px] gap-[20px] max-sm:flex max-sm:flex-col", className)}>
+    <div
+      className={clsx(
+        "grid grid-cols-2 p-[25px] gap-[20px] max-sm:flex max-sm:flex-col",
+        className
+      )}
+    >
       <div className="flex items-center gap-3">
-        {/* Icon */}
-        <Image src={icon} alt="iconQuest" width={32} height={32} />
-        {/* Texte */}
         <div className="text-white font-bold text-xl">Quête {id} :</div>
         <div className="text-white font-normal text-lg">{text}</div>
       </div>
-      {/* Barre de progression */}
       <div className="relative">
         <ProgressBar current={current} max={max} color={color} />
-        <div className="absolute right-0 top-1/2 -translate-y-1/2">
-          <div className={`badge ${current === max ? "bg-[#1CB0F6]" : "bg-gray-600"} text-white text-base rounded-sm px-3 mt-3 py-1`}>
-            {current === max ? "🎉 Quête Terminée" : "Quête en cours"}
-          </div>
-        </div>
-        {/* Infos sur la progression */}
+
         <div className="text-slate-300 text-base mt-2">
           {current}/{max}
         </div>
+        <div
+          className={`badge cursor-pointer ${
+            current === max ? "bg-[#1CB0F6]" : "bg-gray-600"
+          } text-white text-base rounded-sm px-3 mt-3 py-1`}
+        >
+          {current === max ? "🎉 Quête Terminée" : "Quête en cours"}
+        </div>
         <div className="text-slate-200 font-medium text-lg mt-2">
-          Récompense : {reward} XP
+          Récompense : {reward}
         </div>
       </div>
     </div>

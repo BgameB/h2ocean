@@ -33,7 +33,7 @@ export const Navbar = ({ className = "" }: Props) => {
     },
     {
       href: "/faq",
-      text: "EQUIPE",
+      text: "FAQ",
       icon: <GlobalIcon img={FaqIcon} alt="Pictogramme d'équipe" />,
     },
   ];
@@ -45,7 +45,7 @@ export const Navbar = ({ className = "" }: Props) => {
         className
       )}
     >
-      <h1 className="font-black text-[40px] mb-[50px] max-md:hidden text-center">
+      <h1 className="font-black text-[40px] mb-[50px] max-md:hidden text-center text-blue-400">
         H2OCEAN
       </h1>
 
