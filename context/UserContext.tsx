@@ -28,7 +28,7 @@ const DEFAULT_USER: UserData = {
   progress: {},
 };
 
-const LOCAL_STORAGE_KEY = "userData";
+const LOCAL_STORAGE_KEY = "H2Ocean-DATA";
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 

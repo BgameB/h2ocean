@@ -46,9 +46,11 @@ export const Navbar = ({ className = "" }: Props) => {
         className
       )}
     >
-      <div className="relative w-[220px] h-[150px] m-auto max-md:hidden">
-        <GlobalIcon img={LOGO} alt="Pictogramme d'équipe" />
-      </div>
+      <a href="/learn">
+        <div className="relative w-[220px] h-[150px] m-auto max-md:hidden">
+          <GlobalIcon img={LOGO} alt="Pictogramme d'équipe" />
+        </div>
+      </a>
       {/* <h1 className="font-black text-[40px] mb-[50px] max-md:hidden text-center text-blue-400">
         H2OCEAN
       </h1> */}

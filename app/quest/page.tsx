@@ -27,9 +27,9 @@ export default function QuestsPage() {
               className="border-b-2 border-[#37464F]"
               text="Avoir 5 bonnes réponses"
               color="#93d333"
-              reward={"Badge"}
+              reward={"0 xp"}
               current={user.xp > 500 ? 5 : user.xp / 100}
-              max={5}
+              max={3}
             />
             <QuestComponent
               id={2}
@@ -45,14 +45,14 @@ export default function QuestsPage() {
               id={3}
               className=""
               icon={VercelIcon}
-              text="Finir le jeu"
+              text="Etre niveau 5"
               color="#93d333"
               reward={"Badge"}
-              current={29}
-              max={100}
+              current={0}
+              max={0}
             />
           </div>
-          <div className="border-[#37464F] border-[3px]  p-[20px] rounded-[20px] bg-tertiary w-full">
+          {/* <div className="border-[#37464F] border-[3px]  p-[20px] rounded-[20px] bg-tertiary w-full">
             <h1 className="text-3xl font-bold text-center mb-6">Succès</h1>
             <div className="flex flex-col gap-[20px]">
               <Achievement
@@ -87,7 +87,7 @@ export default function QuestsPage() {
                 progress={20}
               />
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="flex flex-col min-w-[450px] mr-auto max-xl:hidden">
